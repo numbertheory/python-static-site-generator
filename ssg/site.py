@@ -2,15 +2,15 @@ from pathlib import Path
 
 class Site:
     def __init__(self, source, dest):
-        source = Path()
-        dest = Path()
+        source = Path(source)
+        dest = Path(dest)
 
     def create_dir(self):
-        directory = "{}/{}".format(self.dest, self.source.relative_to())
+        directory = self.dest / path.relative_to(self.source)
         directory.mkdir(parents=True, exist_ok=True)
 
     def build(self):
         self.dest.mkdir(parents=True, exist_ok=True)
         for path in self.source.rglob("*"):
             if path.is_dir():
-                create_dir(self, path)
+                self.create_dir(path)
