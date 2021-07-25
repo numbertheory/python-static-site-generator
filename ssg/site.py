@@ -2,8 +2,8 @@ from pathlib import Path
 
 class Site:
     def __init__(self, source, dest):
-        self.source = Path()
-        self.dest = Path()
+        source = Path()
+        dest = Path()
 
     def create_dir(self):
         directory = "{}/{}".format(self.dest, self.source.relative_to())
